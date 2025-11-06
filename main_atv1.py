@@ -9,7 +9,7 @@ token = "--"  #Token da API
 raw_pull = "dataset/raw" #caminho dos arquivos brutos em json
 bronze_conv = "dataset/bronze" #caminho dos arquivos processados parquet
 pull_delay = 1.2  #intervalo entre requisições (tava dando limite de requisições ent pensei num delay)
-limitador = 10 #limitador de paginas
+limitador = 1000 #limitador de paginas
 
 #função para baixar os dados
 def baixar_dados():
@@ -68,3 +68,4 @@ if __name__ == "__main__":
     baixar_dados() #executa função para baixar os dados
     converter_para_parquet() #executa função da convesão json/parquet
     print("Pipeline finalizado com sucesso!")
+
